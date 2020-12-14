@@ -17,6 +17,12 @@ namespace TasksApi
 {
     public class Startup
     {
+       public IConfiguration Configuration {get; set;}
+
+        public Startup (IConfiguration configuration){
+          Configuration = configuration;
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddControllers();
@@ -38,7 +44,8 @@ namespace TasksApi
                ValidateAudience = false,
              };
            });
-           services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("BDTarefas"));
+          //  services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("BDTarefas"));
+                     services.AddDbContext<DataContext>(options =>options.UseNpgsql(Configuration.GetConnectionString("Heroku")));
            services.AddTransient<ITarefaRepository,TarefaRepository>();
            services.AddTransient<IUsuarioRepository,UsuarioRepository>();
         }

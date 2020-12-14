@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ESTUDOS\\ProjectGabriel\\Api.NetTask\\TasksApi\\TasksApi.csproj": {}
+    "C:\\ESTUDOS\\GIT\\TarefasAPI\\TasksApi.csproj": {}
   },
   "projects": {
-    "C:\\ESTUDOS\\ProjectGabriel\\Api.NetTask\\TasksApi\\TasksApi.csproj": {
+    "C:\\ESTUDOS\\GIT\\TarefasAPI\\TasksApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ESTUDOS\\ProjectGabriel\\Api.NetTask\\TasksApi\\TasksApi.csproj",
+        "projectUniqueName": "C:\\ESTUDOS\\GIT\\TarefasAPI\\TasksApi.csproj",
         "projectName": "TasksApi",
-        "projectPath": "C:\\ESTUDOS\\ProjectGabriel\\Api.NetTask\\TasksApi\\TasksApi.csproj",
+        "projectPath": "C:\\ESTUDOS\\GIT\\TarefasAPI\\TasksApi.csproj",
         "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\ESTUDOS\\ProjectGabriel\\Api.NetTask\\TasksApi\\obj\\",
+        "outputPath": "C:\\ESTUDOS\\GIT\\TarefasAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -53,7 +53,17 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[3.1.4, )"
             }
