@@ -12,10 +12,15 @@ namespace TasksApi.Models{
   {
     [HttpGet]
     public IActionResult Read([FromServices]ITarefaRepository repository){
-
+       try{
       var id = new Guid(User.Identity.Name);
       var tarefas = repository.Read(id);
       return Ok(tarefas);
+      }
+      catch (Exception  e){
+        return BadRequest(e);
+      } 
+
     }
 
       [HttpPost]

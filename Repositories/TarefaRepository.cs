@@ -26,13 +26,14 @@ namespace TasksApi.Repositories
       _context.Tarefas.Add(tarefa);
       _context.SaveChanges();
     }
+    
      public void Delete(Guid id){
       var tarefa = _context.Tarefas.Find(id);
       _context.Entry(tarefa).State =EntityState.Deleted;
       _context.SaveChanges();
     }
      public List<Tarefa> Read(Guid id){
-      return _context.Tarefas.Where(x=>x.Id == id).ToList();
+      return _context.Tarefas.Where(x=>x.UsuarioId == id).ToList();
     }
      public void Update (Guid id,Tarefa tarefa){
        var _tarefa = _context.Tarefas.Find(id);

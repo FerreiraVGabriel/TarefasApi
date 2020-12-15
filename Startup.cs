@@ -22,7 +22,7 @@ namespace TasksApi
         public Startup (IConfiguration configuration){
           Configuration = configuration;
         }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
            services.AddControllers();
@@ -44,10 +44,10 @@ namespace TasksApi
                ValidateAudience = false,
              };
            });
-          //  services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("BDTarefas"));
-                     services.AddDbContext<DataContext>(options =>options.UseNpgsql(Configuration.GetConnectionString("Heroku")));
-           services.AddTransient<ITarefaRepository,TarefaRepository>();
-           services.AddTransient<IUsuarioRepository,UsuarioRepository>();
+            //services.AddDbContext<DataContext>(options => options.UseInMemoryDatabase("BDTarefas"));
+            services.AddDbContext<DataContext>(options =>options.UseNpgsql(Configuration.GetConnectionString("Heroku")));
+            services.AddTransient<ITarefaRepository,TarefaRepository>();
+            services.AddTransient<IUsuarioRepository,UsuarioRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
